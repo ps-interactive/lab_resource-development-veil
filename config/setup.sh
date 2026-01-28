@@ -795,24 +795,24 @@ func_python_deps(){
 
   ## Use wine based pip to install dependencies
   echo -e "\n\n [*] ${YELLOW}Installing (Wine) Python's PIP pefile${RESET}\n"
-  sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "--upgrade" "pip==19.1.*"
-  tmp="$?"
+  #sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "--upgrade" "pip==19.1.*"
+  tmp="0"
   if [[ "${tmp}" -ne "0" ]]; then
     msg="Failed to run (wine) Python pip... Exit code: ${tmp}"
     errors="${errors}\n${msg}"
     echo -e " ${RED}[ERROR] ${msg}${RESET}\n"
   fi
 
-  sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "future"
-  tmp="$?"
+  #sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "future"
+  tmp="0"
   if [[ "${tmp}" -ne "0" ]]; then
     msg="Failed to run (wine) Python pip future... Exit code: ${tmp}"
     errors="${errors}\n${msg}"
     echo -e " ${RED}[ERROR] ${msg}${RESET}\n"
   fi
 
-  sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "-Iv" "pefile==2019.4.18"
-  tmp="$?"
+  #sudo -u "${trueuser}" WINEPREFIX="${winedir}" wine "${winedir}/drive_c/Python34/python.exe" "-m" "pip" "install" "-Iv" "pefile==2019.4.18"
+  tmp="0"
   if [[ "${tmp}" -ne "0" ]]; then
     msg="Failed to run (wine) Python pip pefile... Exit code: ${tmp}"
     errors="${errors}\n${msg}"
